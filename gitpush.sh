@@ -15,7 +15,7 @@ function countainStr(){
   fi
 }
 #ADD
-echo -e "\n"
+
 printStep "git add"
 echo `git add .`
 
@@ -45,13 +45,4 @@ echo `git commit -m ${message}`
 
 printStep "git push"
 pushResult=`git push`
-
-# 如果推送远程报错
-countainStr $pushResult "fatal: "
-if [ $? == 1 ]
-then
-  echo "something error!"
-else
-  echo "push successfully"
-fi
 
