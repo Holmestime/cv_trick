@@ -13,4 +13,11 @@ else
     echo '[usage]'
     echo 'gitPush [COMMIT MESSAGE]'
 fi
-
+# 如果推送远程报错
+countainStr $pushResult "fatal: "
+if [ $? == 1 ]
+then
+  echo "something error!"
+else
+  echo "push successfully"
+fi
