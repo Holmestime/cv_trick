@@ -1,4 +1,14 @@
 #!/bin/bash
+#判断 字符串参数1是否包含字符串参数2
+function countainStr(){
+  result=$(echo $1 | grep "${2}")
+  if [[ "$result" != "" ]]
+  then
+    return 1
+  else
+    return 0
+  fi
+}
 
 #判断参数个数
 if [ $# == 1 ]
